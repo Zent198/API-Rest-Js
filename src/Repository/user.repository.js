@@ -1,4 +1,3 @@
-import { UsuarioModel } from "../models/user.model.js";
 import pool from "../config/db.js";
 
 
