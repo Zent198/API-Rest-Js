@@ -9,7 +9,7 @@ export const createPost = async (req, res, next) => {
 
         const imageUrl = req.file ? req.file.filename : null;
 
-        const postId = postService.createPost(title, content, userId, imageUrl);
+        const postId = await postService.createPost(title, content, userId, imageUrl);
 
        return res.status(201).json({
             message: 'Post creado con éxito',
