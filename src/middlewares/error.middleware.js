@@ -20,7 +20,7 @@ export const errorHandler = (err, req, res, next) => {
     success: false,
     error: {
         status: status,
-        message: message
+        message: err.details.map(d => d.message)
     }
    });
     
