@@ -1,16 +1,16 @@
 import * as postRepo from '../Repository/post.repository.js';
 import {HttpError} from '../utils/HttpError.js';
 
-export const createPost = async (title, content, userId) => {
+export const createPost = async (title, content, userId, imageUrl) => {
     if(!title || !content){
         throw new HttpError("Título y contenido son obligatorios", 400);
     }
 
-    return postRepo.createPostRepository(title, content, userId);
+    return await postRepo.createPostRepository(title, content, userId, imageUrl);
 };
 
 export const getAllPosts = async () => {
-    return postRepo.getAllPostsRepository();
+    return await postRepo.getAllPostsRepository();
 };
 
 export const getPostById = async (postId) =>{
